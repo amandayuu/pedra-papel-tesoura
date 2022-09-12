@@ -4,24 +4,24 @@
       <div
         class="card-container"
         :class="{
-          draw: draw,
-          win: win,
-          lose: lose,
+          draw: gameDraw,
+          win: gameWin,
+          lose: gameLose,
         }"
       >
         <div
           class="header"
           :class="{
-            draw: draw,
-            win: win,
-            lose: lose,
+            draw: gameDraw,
+            win: gameWin,
+            lose: gameLose,
           }"
         >
           <h1>
             {{ title }}
-            <img v-show="draw" src="./assets/images/empate.png" />
-            <img v-show="win" src="./assets/images/ganhou.png" />
-            <img v-show="lose" src="./assets/images/perdeu.png" />
+            <img v-show="gameDraw" src="./assets/images/empate.png" />
+            <img v-show="gameWin" src="./assets/images/ganhou.png" />
+            <img v-show="gameLose" src="./assets/images/perdeu.png" />
           </h1>
         </div>
 
@@ -90,9 +90,9 @@ export default {
       rock: "rock",
       scissor: "scissor",
       paper: "paper",
-      draw: false,
-      win: false,
-      lose: false,
+      gameDraw: false,
+      gameWin: false,
+      gameLose: false,
     };
   },
 
@@ -100,9 +100,9 @@ export default {
     restartGame() {
       this.started = false;
 
-      this.draw = false;
-      this.win = false;
-      this.lose = false;
+      this.gameDraw = false;
+      this.gameWin = false;
+      this.gameLose = false;
 
       this.title = "Pedra, Papel, Tesoura";
     },
@@ -117,17 +117,17 @@ export default {
         // comentário TÓPI roupa you
         if (this.numberCPU == 0) {
           this.title = "Empate!";
-          this.draw = true;
+          this.gameDraw = true;
         }
 
         if (this.numberCPU == 1) {
           this.title = "Você perdeu!";
-          this.lose = true;
+          this.gameLose = true;
         }
 
         if (this.numberCPU == 2) {
           this.title = "Você venceu!";
-          this.win = true;
+          this.gameWin = true;
         }
         return;
       }
@@ -137,19 +137,19 @@ export default {
 
         if (this.numberCPU == 0) {
           this.title = "Você venceu!";
-          this.win = true;
+          this.gameWin = true;
           return;
         }
 
         if (this.numberCPU == 1) {
           this.title = "Empate!";
-          this.draw = true;
+          this.gameDraw = true;
           return;
         }
 
         if (this.numberCPU == 2) {
           this.title = "Você perdeu!";
-          this.lose = true;
+          this.gameLose = true;
         }
         return;
       }
@@ -159,18 +159,18 @@ export default {
 
         if (this.numberCPU == 0) {
           this.title = "Você perdeu!";
-          this.lose = true;
+          this.gameLose = true;
           return;
         }
 
         if (this.numberCPU == 1) {
           this.title = "Você ganhou!";
-          this.win = true;
+          this.gameWin = true;
           return;
         }
         if (this.numberCPU == 2) {
           this.title = "Empate!";
-          this.draw = true;
+          this.gameDraw = true;
         }
         return;
       }
