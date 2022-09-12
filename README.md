@@ -1,5 +1,7 @@
 # Pedra, Papel, Tesoura
 
+
+
 ![game](https://user-images.githubusercontent.com/37625520/189773032-e838d4ae-22fd-4fde-95b0-165a5884a430.gif)
 
 
